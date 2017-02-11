@@ -21,8 +21,7 @@
 //    NSMutableArray *theArray = [[NSMutableArray alloc] initWithArray:@[@1, @10, @2, @42, @44, @78, @100, @90, @120]];
 //    [self performSelectionSort:theArray];
 //    [self performInsertionSort:theArray];
-    
-    [self reverseThisString:@"Ed Sheeran"];
+
 }
 
 //MARK: Selection Sort
@@ -101,6 +100,24 @@
         
         NSLog(@"The reversed string of %@ is %@", stringToBeReversed, reversedString);
     }
+}
+
+
+//MARK: Fibonnaci Series
+-(void)listOutTheFibonacciSeriesOf:(int)lastIndex  {
+    
+    NSMutableArray *fibonnaci = [NSMutableArray new];
+    
+    for (int i = 0; i < lastIndex; i++) {
+        if (i < 2) {
+            [fibonnaci addObject:[NSNumber numberWithInt:i]];
+            continue;
+        } else {
+            int nextNumber = [[fibonnaci objectAtIndex:i -2] intValue] + [[fibonnaci objectAtIndex:i-1] intValue];
+            [fibonnaci addObject:[NSNumber numberWithInt:nextNumber]];
+        }
+    }
+    NSLog(@"The Fibonacci series at index %i is: \n%@", lastIndex, fibonnaci);
 }
 
 
