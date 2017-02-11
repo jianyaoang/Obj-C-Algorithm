@@ -18,9 +18,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 
-    NSMutableArray *theArray = [[NSMutableArray alloc] initWithArray:@[@1, @10, @2, @42, @44, @78, @100, @90, @120]];
-    [self performSelectionSort:theArray];
-    [self performInsertionSort:theArray];
+//    NSMutableArray *theArray = [[NSMutableArray alloc] initWithArray:@[@1, @10, @2, @42, @44, @78, @100, @90, @120]];
+//    [self performSelectionSort:theArray];
+//    [self performInsertionSort:theArray];
+    
+    [self performPalindromeCheckOn:@"Racecar"];
 }
 
 //MARK: Selection Sort
@@ -60,6 +62,28 @@
         [arrayToBeSorted replaceObjectAtIndex:j + 1 withObject:targetNumber];
     }
     NSLog(@"performInsertionSort %@", arrayToBeSorted);
+}
+
+//MARK: Palindrome
+-(void)performPalindromeCheckOn:(NSString*)word {
+    
+    if (word != nil && word.length > 0) {
+        
+        NSMutableString *reversedString = [NSMutableString new];
+        for (int i = (int)word.length - 1; i >= 0; i--) {
+            char singleCharacterInWord = [word characterAtIndex:i];
+            [reversedString appendFormat:@"%c",singleCharacterInWord];
+        }
+        
+        word = [word lowercaseString];
+        reversedString = [[NSMutableString alloc] initWithString:[reversedString lowercaseString]];
+        
+        if (reversedString.length > 0 && [reversedString isEqualToString:word]) {
+            NSLog(@"Yes, %@ is a palindrome", word);
+        } else {
+            NSLog(@"Nope, %@ is NOT a palindrome", word);
+        }
+    }
 }
 
 
