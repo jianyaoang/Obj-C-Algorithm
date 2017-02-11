@@ -22,7 +22,7 @@
 //    [self performSelectionSort:theArray];
 //    [self performInsertionSort:theArray];
     
-    [self performPalindromeCheckOn:@"Racecar"];
+    [self reverseThisString:@"Ed Sheeran"];
 }
 
 //MARK: Selection Sort
@@ -83,6 +83,23 @@
         } else {
             NSLog(@"Nope, %@ is NOT a palindrome", word);
         }
+    }
+}
+
+//MARK: reverse string
+-(void)reverseThisString:(NSString*)stringToBeReversed {
+    
+    if (stringToBeReversed.length > 0) {
+        int i = (int)stringToBeReversed.length;
+        
+        NSMutableString *reversedString = [NSMutableString new];
+        while (i >= 0) {
+            i--;
+            char singleCharacter = [stringToBeReversed characterAtIndex:i];
+            [reversedString appendFormat:@"%c", singleCharacter];
+        }
+        
+        NSLog(@"The reversed string of %@ is %@", stringToBeReversed, reversedString);
     }
 }
 
