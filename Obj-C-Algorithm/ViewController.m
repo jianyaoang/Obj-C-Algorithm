@@ -18,7 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 
-    [self performBinarySearchOn:@[@1,@2,@3,@4,@5,@6,@9,@12,@45,@100,@101] toLookFor:[NSNumber numberWithInt:12]];
+    [self performLinearSearchOn:@[@1,@2,@3,@4,@5,@6,@9,@12,@45,@100,@101] toLookFor:[NSNumber numberWithInt:12]];
 }
 
 //MARK: Selection Sort
@@ -137,6 +137,22 @@
             } else {
                 NSLog(@"The position of %@ is at index %i", numberToLookFor, middlePosition);
                 break;
+            }
+        }
+    }
+}
+
+//MARK: Linear search
+-(void)performLinearSearchOn:(NSArray*)numbersInArray toLookFor:(NSNumber*)numberToLookFor {
+    
+    if (numbersInArray.count > 0) {
+        
+        for (int i = 0; i < numbersInArray.count; i++) {
+            
+            NSNumber *numberAtIndex = [numbersInArray objectAtIndex:i];
+            
+            if ([numberAtIndex isEqualToNumber:numberToLookFor]) {
+                NSLog(@"The number %@ is at index %i", numberToLookFor, i);
             }
         }
     }
