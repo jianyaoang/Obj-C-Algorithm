@@ -15,4 +15,8 @@ Numerical Related
 ----
 1. Fibonacci Series
 
+Search
+--
+1. Binary Search
+
 More to come
