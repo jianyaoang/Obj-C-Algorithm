@@ -18,7 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 
-    [self performLinearSearchOn:@[@1,@2,@3,@4,@5,@6,@9,@12,@45,@100,@101] toLookFor:[NSNumber numberWithInt:12]];
+    [self checkIfNumberIsEvenOrOdd:344];
 }
 
 //MARK: Selection Sort
@@ -117,6 +117,16 @@
     NSLog(@"The Fibonacci series at index %i is: \n%@", lastIndex, fibonnaci);
 }
 
+//MARK : Odd or even numbers
+-(void)checkIfNumberIsEvenOrOdd:(int)number {
+    
+    if (number % 2 == 0) {
+        NSLog(@"%i is an even number", number);
+    } else {
+        NSLog(@"%i is an odd number", number);
+    }
+}
+
 //MARK: Binary Search
 -(void)performBinarySearchOn:(NSArray*)sortedArray toLookFor:(NSNumber*)numberToLookFor {
     
@@ -157,6 +167,8 @@
         }
     }
 }
+
+
 
 
 
