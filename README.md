@@ -14,6 +14,7 @@ String
 Numerical Related
 ---
 1. Fibonacci Series
+2. Factorial
 
 Search
 ---
