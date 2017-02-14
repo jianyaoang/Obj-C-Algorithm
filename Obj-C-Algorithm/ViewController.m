@@ -18,7 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 
-    [self checkIfNumberIsEvenOrOdd:344];
+    [self findTheFactorialOf:5];
 }
 
 //MARK: Selection Sort
@@ -124,6 +124,17 @@
         NSLog(@"%i is an even number", number);
     } else {
         NSLog(@"%i is an odd number", number);
+    }
+}
+
+//MARK: Factorial
+-(int)findTheFactorialOf:(int)number {
+    
+    if (number == 0) {
+        return 1;
+    } else {
+        int factorial = number * [self findTheFactorialOf:number - 1];
+        return factorial;
     }
 }
 
