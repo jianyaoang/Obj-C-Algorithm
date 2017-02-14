@@ -18,10 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 
-//    NSMutableArray *theArray = [[NSMutableArray alloc] initWithArray:@[@1, @10, @2, @42, @44, @78, @100, @90, @120]];
-//    [self performSelectionSort:theArray];
-//    [self performInsertionSort:theArray];
-
+    [self performBinarySearchOn:@[@1,@2,@3,@4,@5,@6,@9,@12,@45,@100,@101] toLookFor:[NSNumber numberWithInt:12]];
 }
 
 //MARK: Selection Sort
@@ -118,6 +115,31 @@
         }
     }
     NSLog(@"The Fibonacci series at index %i is: \n%@", lastIndex, fibonnaci);
+}
+
+//MARK: Binary Search
+-(void)performBinarySearchOn:(NSArray*)sortedArray toLookFor:(NSNumber*)numberToLookFor {
+    
+    if (sortedArray.count > 0) {
+        
+        int startPosition = 0;
+        int endPosition = (int)sortedArray.count - 1;
+        
+        while (startPosition <= endPosition) {
+            
+            int middlePosition = ((startPosition + endPosition) / 2);
+            NSNumber *middlePositionValue = [sortedArray objectAtIndex:middlePosition];
+            
+            if (numberToLookFor > middlePositionValue) {
+                startPosition = middlePosition + 1;
+            } else if (numberToLookFor < middlePositionValue) {
+                endPosition = middlePosition - 1;
+            } else {
+                NSLog(@"The position of %@ is at index %i", numberToLookFor, middlePosition);
+                break;
+            }
+        }
+    }
 }
 
 
