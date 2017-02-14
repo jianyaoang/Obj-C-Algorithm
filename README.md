@@ -11,5 +11,8 @@ String
 3. Palindrome String
 4. Reverse String
 
+Numerical Related
+----
+1. Fibonacci Series
 
 More to come
